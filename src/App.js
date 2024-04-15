@@ -6,6 +6,8 @@ import {LoginCallback, SecureRoute, Security} from '@okta/okta-react';
 import {OktaAuth, toRelativeUrl} from '@okta/okta-auth-js';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Login from "./Login";
+import Payment from "./components/payment";
+import Stripe from "./components/Stripe";
 
 
 function App() {
@@ -20,6 +22,10 @@ function App() {
         path: '/signup', element: <SignUp/>,
     },{
         path:'/login',element:<Login/>
+    },{
+        path:'/payment',element:<Payment/>
+    },{
+        path:'/stripe',element:<Stripe/>
     }]);
 
     const restoreOriginalUri = async (_oktaAuth, originalUri) => {
